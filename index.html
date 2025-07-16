@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 날씨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <header>
+                <h1><i class="fas fa-cloud-sun"></i> 오늘의 날씨</h1>
+                <div class="search-box">
+                    <input type="text" id="city-input" placeholder="도시명을 입력하세요..." autocomplete="off">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-hint">
+                    <small>예: Seoul, Tokyo, New York, London, Paris, Beijing</small>
+                </div>
+            </header>
+
+            <main class="weather-content">
+                <div class="weather-info">
+                    <div class="location">
+                        <h2 id="city-name">도시를 검색해주세요</h2>
+                        <p id="date-time">날짜와 시간</p>
+                    </div>
+
+                    <div class="current-weather">
+                        <div class="weather-icon">
+                            <img id="weather-icon" src="" alt="날씨 아이콘">
+                        </div>
+                        <div class="temperature">
+                            <h1 id="temperature">--°C</h1>
+                            <p id="weather-description">날씨 설명</p>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <div>
+                                <span class="label">체감온도</span>
+                                <span id="feels-like">--°C</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <span class="label">습도</span>
+                                <span id="humidity">--%</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <span class="label">풍속</span>
+                                <span id="wind-speed">-- km/h</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <span class="label">가시거리</span>
+                                <span id="visibility">-- km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast">
+                    <h3>시간별 예보</h3>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- 시간별 예보가 여기에 동적으로 추가됩니다 -->
+                    </div>
+                </div>
+            </main>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>날씨 정보를 불러오는 중...</p>
+            </div>
+
+            <div class="error" id="error">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="error-message">오류가 발생했습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
